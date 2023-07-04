@@ -1,0 +1,27 @@
+@import "bulma/sass/utilities/_all.sass";
+@import 'bulma/sass/components/navbar';
+
+.navbar-burger {
+  color: #fff;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+$code-path: 'm8 18l-6-6l6-6l1.425 1.425l-4.6 4.6L9.4 16.6L8 18Zm8 0l-1.425-1.425l4.6-4.6L14.6 7.4L16 6l6 6l-6 6Z';
+$grid-path: 'M3 11V3h8v8H3Zm0 10v-8h8v8H3Zm10-10V3h8v8h-8Zm0 10v-8h8v8h-8Z';
+
+:host ::ng-deep .icon-slide-toggle .mdc-switch__icon {
+  transform: scale(0.79); // This is optional for a better icon fit
+
+  // Toggle off
+  &--off > path {
+    d: path($code-path);
+  }
+
+  // Toggle on
+  &--on > path {
+    d: path($grid-path);
+  }
+}
