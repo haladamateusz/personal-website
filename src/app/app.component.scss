@@ -1,0 +1,11 @@
+.has-border-white {
+  border-color: white !important;
+}
+
+.tile.is-vertical > .tile.is-child:not(:last-child) {
+  margin-bottom: .5rem !important;
+}
+
+.tile.is-child {
+  margin: 0.5rem !important;
+}
