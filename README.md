@@ -1,27 +1,16 @@
-# PersonalWebsite
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+# Personal website
 
-## Development server
+Simple website created with Angular. Allows users to go through my experience and download CV (in fancy and printer-friendly forms).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Hosted on github pages.
 
-## Code scaffolding
+## 🚀 About Me
+I'm a Frontend developer with over three years of experience. This repo is used to showcase my skills and projects.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Client:** Angular, Bulma
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+(Not yet implemeted) **Server:** .NET, Backblaze, QuestPDF
