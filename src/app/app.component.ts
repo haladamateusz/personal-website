@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { faGithub, faLinkedin, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faMobile } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, MatButtonModule, FontAwesomeModule],
+  imports: [CommonModule, NavbarComponent, MatButtonModule, FontAwesomeModule, NgOptimizedImage],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
   // animations: [

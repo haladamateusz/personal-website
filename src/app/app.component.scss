@@ -18,9 +18,11 @@ fa-icon{
 @keyframes load-button {
   from {
     opacity: 0;
+    transform: translateY(100%);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 
 }
@@ -43,4 +45,13 @@ fa-icon{
 
 button[mat-flat-button], button[mat-stroked-button] {
   animation: load-button 800ms ease-in-out;
+
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  &:hover{
+    color: white;
+  }
 }
