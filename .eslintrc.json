@@ -1,9 +1,13 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": [
+        "*.ts"
+      ],
       "parserOptions": {
         "project": "./tsconfig.json"
       },
@@ -33,14 +37,30 @@
             "style": "kebab-case"
           }
         ],
-        "@typescript-eslint/comma-dangle": ["error", "never"],
+        "@typescript-eslint/comma-dangle": [
+          "error",
+          "never"
+        ],
         "import/prefer-default-export": "off"
       }
     },
     {
-      "files": ["*.html"],
-      "extends": ["plugin:@angular-eslint/template/recommended", "plugin:@angular-eslint/template/accessibility"],
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:@angular-eslint/template/accessibility"
+      ],
       "rules": {}
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "plugin:@ngrx/all-requiring-type-checking"
+      ]
     }
   ]
 }

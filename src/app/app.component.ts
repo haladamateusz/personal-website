@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { NavbarComponent } from './navbar/navbar.component';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faMobile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-// import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-// import { faMobile, faEnvelope } from '@fortawesome/free-brands-svg-icons';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +12,52 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [CommonModule, NavbarComponent, MatButtonModule, FontAwesomeModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
+  // animations: [
+  //   trigger('cardsAnimation', [
+  //     transition('* => *', [
+  //       query('.card', style({ opacity: 0, transform: 'translateY(-100%)' })),
+  //       query('.card', stagger('200ms', [animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))]))
+  //     ])
+  //   ])
+  // ]
 })
 export class AppComponent {
-  readonly icons = {
-    linkedin: faLinkedin,
-    github: faGithub,
-    mail: faEnvelope,
-    phone: faMobile
-  };
+  readonly contactInfo: { icon: IconDefinition; display: string; link?: string }[] = [
+    { icon: faLinkedin, display: '/in/haladamateusz', link: 'https://www.linkedin.com/in/haladamateusz/' },
+    { icon: faGithub, display: '/haladamateusz', link: 'https://www.github.com/haladamateusz/' },
+    { icon: faEnvelope, display: 'haladamateusz (at) gmail.com' },
+    { icon: faMobile, display: '+41 078 241 13 08' }
+  ];
+
+  readonly skillsInfo: { field: string; skills: string[] }[] = [
+    {
+      field: 'Frontend',
+      skills: ['Angular', 'Ionic', 'RXJS', 'NGRX', 'NX', 'Jest', 'Cypress']
+    },
+    {
+      field: 'Backend',
+      skills: ['.NET', 'Django', 'NestJS']
+    },
+    {
+      field: 'Devops',
+      skills: ['Docker', 'CI/CD', 'S3', 'Cloud hosting']
+    },
+    {
+      field: 'Databases',
+      skills: ['SQL', 'PostgreSQL', 'MongoDB']
+    }
+  ];
+
+  readonly educationInfo: { university: string; description: string }[] = [
+    {
+      university: '🇱🇺 University of Luxembourg',
+      description: 'Computer science, Erasmus+ Programme'
+    },
+    {
+      university: '🇵🇱 University of Cardinal Wyszyński in Warsaw',
+      description: "Computer science, Master's Degree"
+    }
+  ];
 
   title = 'personal-website';
 }

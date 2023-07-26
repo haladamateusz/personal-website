@@ -3,39 +3,48 @@
 <section class="section has-text-white-ter">
   <div class="tile is-ancestor">
     <div class="tile is-8 p-0 is-parent is-vertical">
-      <div class="tile p-3 is-child has-background-grey-darker has-text-white-ter">
+      <div class="tile card p-3 is-child has-background-grey-darker has-text-white-ter">
         <div class="columns is-desktop is-flex is-vcentered">
           <div class="column is-one-third-desktop">
             <figure class="image is-256x256">
-              <img class="is-rounded is-1by1" src="https://placehold.co/256x256" alt="picture of me">
+              <img class="is-rounded is-1by1" src="https://placehold.co/256x256" alt="picture of me" />
             </figure>
           </div>
           <div class="column">
-            <div class="columns is-mobile is-flex is-vcentered">
-              <div class="column has-text-centered is-1"> <fa-icon [icon]="icons.phone"/> </div>
-              <div class="column has-text-left-mobile"> <span> +41 078 241 13 08</span></div>
-            </div>
-            <div class="columns is-mobile is-flex is-vcentered">
-              <div class="column has-text-centered is-1"> <fa-icon [icon]="icons.mail"/></div>
-              <div class="column has-text-left-mobile"> <span> haladamateusz (at) gmail.com</span></div>
-            </div>
-              <div class="columns is-mobile is-flex is-vcentered">
-              <div class="column has-text-centered is-1"> <fa-icon [icon]="icons.github"/></div>
-              <div class="column has-text-left-mobile">  <span> /haladamateusz</span></div>
+            <div *ngFor="let item of contactInfo" class="columns is-mobile is-flex is-vcentered">
+              <div class="column has-text-centered is-offset-2 is-1"><fa-icon [icon]="item.icon" /></div>
+              <div class="column has-text-left-mobile is-5">
+                <ng-container *ngIf="item.link">
+                  <a class="has-text-white" [href]="item.link">{{ item.display }}</a>
+                </ng-container>
+                <ng-container *ngIf="!item.link">
+                  <span>{{ item.display }}</span>
+                </ng-container>
               </div>
-                <div class="columns is-mobile is-flex is-vcentered">
-              <div class="column has-text-centered  is-1"> <fa-icon [icon]="icons.linkedin"/></div>
-              <div class="column has-text-left-mobile">  <span> /in/haladamateusz</span></div>
-                </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="tile p-0 is-parent">
-        <div class="tile p-3 box has-background-grey-darker has-text-white-ter is-child">
-          <p>SKS</p>
+        <div class="tile card p-3 box has-background-grey-darker has-text-white-ter is-child">
+          <div class="card-content p-2">
+            <p class="title is-size-4 mt-0">Za oknem deszcz</p>
+            <p *ngFor="let skillInfo of skillsInfo">
+              <strong>{{ skillInfo.field }}: </strong>
+              <span *ngFor="let skill of skillInfo.skills; last as isLast"
+                >{{ skill }}<ng-container *ngIf="!isLast">, </ng-container>
+              </span>
+            </p>
+          </div>
         </div>
-        <div class="tile p-3 box has-background-grey-darker has-text-white-ter is-child">
-          <p>EDD</p>
+        <div class="tile card p-3 box has-background-grey-darker has-text-white-ter is-child">
+          <div class="card-content p-2">
+            <p class="title is-size-4 mt-0">A u mnie Majkel</p>
+            <ng-container *ngFor="let education of educationInfo">
+              <p class="mb-0">{{ education.university }}</p>
+              <small>{{ education.description }}</small>
+            </ng-container>
+          </div>
         </div>
       </div>
     </div>
@@ -45,9 +54,6 @@
         <div class="card-content p-2">
           <p class="title is-size-4 mt-0">Experience</p>
           <div class="timeline">
-            <!--          <header class="timeline-header">-->
-            <!--            <span class="tag is-medium is-primary">Start</span>-->
-            <!--          </header>-->
             <div class="timeline-item">
               <div class="timeline-marker"></div>
               <div class="timeline-content">
@@ -76,7 +82,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section pt-0">
   <div class="columns">
     <div class="column is-offset-one-quarter is-half has-text-centered">
       <button class="mx-2 is-size-5-mobile has-text-white-ter mt-2" mat-flat-button color="primary">Download report</button>
