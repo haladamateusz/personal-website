@@ -54,7 +54,7 @@ export class AppComponent {
       description: 'Computer science, Erasmus+ Programme'
     },
     {
-      university: '🇵🇱 University of Cardinal Wyszyński in Warsaw',
+      university: '🇵🇱 University of Cardinal Wyszynski in Warsaw',
       description: "Computer science, Master's Degree"
     }
   ];
